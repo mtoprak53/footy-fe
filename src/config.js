@@ -1,5 +1,5 @@
 const headers = {
-  "X-RapidAPI-Key": import.meta.env.APIKEY,
+  "X-RapidAPI-Key": import.meta.env.VITE_APIKEY,
   "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
 }
 

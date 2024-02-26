@@ -36,13 +36,13 @@ function App() {
       "infoLoaded=", infoLoaded,
       "currentUser=", currentUser,
       "token=", token,
-      "jose=", jose,
+      // "jose=", jose,
   );
 
-  console.log("##################################################");
-  console.log("jose=");
-  console.log(jose);
-  console.log("##################################################");
+  // console.log("##################################################");
+  // console.log("jose=");
+  // console.log(jose);
+  // console.log("##################################################");
 
 
   useEffect(function mountStuff() {
