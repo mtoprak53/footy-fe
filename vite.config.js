@@ -17,6 +17,3 @@ export default defineConfig({
   //  origin: "http://0.0.0.0:8080",
   // },
 })
-
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
