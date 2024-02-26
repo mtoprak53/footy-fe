@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// const BASE_URL = import.meta.env.REACT_APP_BASE_URL || "http://localhost:3001";
+const BASE_URL = import.meta.env.REACT_APP_BASE_URL || "http://localhost:3001";
 // const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
-const BASE_URL = "footy-backend.railway.internal";
+// const BASE_URL = "footy-backend.railway.internal";
 
 console.log("import.meta.env.REACT_APP_BASE_URL: ", import.meta.env.REACT_APP_BASE_URL);
 console.log("process.env.REACT_APP_BASE_URL: ", process.env.REACT_APP_BASE_URL);
