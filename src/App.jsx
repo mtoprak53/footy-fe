@@ -49,13 +49,14 @@ function App() {
     async function getCountries() {
       try {
         const res = await FootyApi.getLeagueCountries();
+        // eslint-disable-next-line no-unused-vars
         setCountries(countries => res);      
         return res;
       } catch (err) {
         console.error(err);
         // setError(err);
       }
-    };
+    }
 
     getCountries();
   }, []);
