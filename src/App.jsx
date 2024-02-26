@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import useLocalStorage from "./hooks/useLocalStorage";
 import Navigation from "./routes-nav/Navigation";
@@ -39,10 +39,10 @@ function App() {
       // "jose=", jose,
   );
 
-  // console.log("##################################################");
-  // console.log("jose=");
-  // console.log(jose);
-  // console.log("##################################################");
+  // console.debug("##################################################");
+  // console.debug("jose=");
+  // console.debug(jose);
+  // console.debug("##################################################");
 
 
   useEffect(function mountStuff() {
@@ -74,25 +74,25 @@ function App() {
 
           // let { username } = jwt.decode(token);  // old
 
-          let protectedHeader = jose.decodeProtectedHeader(token);  // new
+          // let protectedHeader = jose.decodeProtectedHeader(token);  // new
 
           let { username } = jose.decodeProtectedHeader(token);  // new
 
-          // console.log(protectedHeader);
-          console.log(username);
+          // console.debug(protectedHeader);
+          console.debug("username: ", username);
 
           // put the token on the Api class so it can use it to call the API.
           FootyApi.token = token;
           let currentUser = await FootyApi.getCurrentUser(username);
           let favs = await FootyApi.getFavorites(username);
-          console.log(`currentUser >> `);
-          console.log(currentUser);
-          console.log(`favoriteLeagues >> `);
-          console.log(favs[0]);
-          console.log(`favoriteCups >> `);
-          console.log(favs[1]);
-          console.log(`favoriteTeams >> `);
-          console.log(favs[2]);
+          console.debug(`currentUser >> `);
+          console.debug(currentUser);
+          console.debug(`favoriteLeagues >> `);
+          console.debug(favs[0]);
+          console.debug(`favoriteCups >> `);
+          console.debug(favs[1]);
+          console.debug(`favoriteTeams >> `);
+          console.debug(favs[2]);
           setCurrentUser(currentUser);
           setFavoriteLeagues(favs[0].favorites);
           setFavoriteCups(favs[1].favorites);
@@ -121,14 +121,14 @@ function App() {
         // FootyApi.token = token;
         // let currentUser = await FootyApi.getCurrentUser(username);
         let favs = await FootyApi.getFavorites(currentUser.username);
-        // console.log(`currentUser >> `);
-        // console.log(currentUser);
-        console.log(`favoriteLeagues >> `);
-        console.log(favs[0]);
-        console.log(`favoriteCups >> `);
-        console.log(favs[1]);
-        console.log(`favoriteTeams >> `);
-        console.log(favs[2]);
+        // console.debug(`currentUser >> `);
+        // console.debug(currentUser);
+        console.debug(`favoriteLeagues >> `);
+        console.debug(favs[0]);
+        console.debug(`favoriteCups >> `);
+        console.debug(favs[1]);
+        console.debug(`favoriteTeams >> `);
+        console.debug(favs[2]);
         // setCurrentUser(currentUser);
         setFavoriteLeagues(favs[0].favorites);
         setFavoriteCups(favs[1].favorites);

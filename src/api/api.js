@@ -4,8 +4,8 @@ const BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
 // const BASE_URL = process.env.VITE_BACKEND_URL || "http://localhost:3001";
 // const BASE_URL = "footy-backend.railway.internal";
 
-console.log("import.meta.env.VITE_BACKEND_URL: ", import.meta.env.VITE_BACKEND_URL);
-// console.log("process.env.VITE_BACKEND_URL: ", process.env.VITE_BACKEND_URL);
+console.debug("import.meta.env.VITE_BACKEND_URL: ", import.meta.env.VITE_BACKEND_URL);
+// console.debug("process.env.VITE_BACKEND_URL: ", process.env.VITE_BACKEND_URL);
 
 console.debug("BASE_URL: ", BASE_URL);
 /** API Class.
