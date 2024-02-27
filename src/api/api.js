@@ -3,11 +3,16 @@ import axios from "axios";
 const BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
 // const BASE_URL = process.env.VITE_BACKEND_URL || "http://localhost:3001";
 // const BASE_URL = "footy-backend.railway.internal";
+// const BASE_URL = "https://footy-backend.up.railway.app";
 
-console.debug("import.meta.env.VITE_BACKEND_URL: ", import.meta.env.VITE_BACKEND_URL);
+/** IMPOTANT !!! : THIS LINE CAUSES ERROR DURING THE BUILD PROCESS !!! */
+// console.debug("import.meta.env.VITE_BACKEND_URL: ", import.meta.env.VITE_BACKEND_URL);
+
+
 // console.debug("process.env.VITE_BACKEND_URL: ", process.env.VITE_BACKEND_URL);
 
 console.debug("BASE_URL: ", BASE_URL);
+
 /** API Class.
  * 
  * Static class tying together methods used to get/send to the API. 

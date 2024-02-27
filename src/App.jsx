@@ -75,11 +75,12 @@ function App() {
 
           // let { username } = jwt.decode(token);  // old
 
-          // let protectedHeader = jose.decodeProtectedHeader(token);  // new
+          let protectedHeader = jose.decodeProtectedHeader(token);  // new
 
-          let { username } = jose.decodeProtectedHeader(token);  // new
 
-          // console.debug(protectedHeader);
+          let { username } = await jose.decodeProtectedHeader(token);  // new
+
+          console.debug("protectedHeader: ", protectedHeader);
           console.debug("username: ", username);
 
           // put the token on the Api class so it can use it to call the API.
