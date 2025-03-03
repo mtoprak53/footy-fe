@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import UserContext from "../auth/userContext";
 import "./Navigation.css";
@@ -17,7 +17,7 @@ function Navigation({ logout }) {
 
   function loggedInNav() {
     return (
-        <ul className="navbar-nav ml-auto">
+        <ul className="navbar-nav ml-auto justify-content-end">
           <li className="nav-item mr-4">
             <NavLink className="nav-link" to="/league">
               Leagues
@@ -44,7 +44,7 @@ function Navigation({ logout }) {
 
   function loggedOutNav() {
     return (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav ml-auto justify-content-end">
         <li className="nav-item mr-4">
           <NavLink className="nav-link" to="/login">
             Login
@@ -60,12 +60,21 @@ function Navigation({ logout }) {
   }
 
   return (
-      <nav className="Navigation navbar navbar-expand-md">
+    <nav className="Navigation navbar sticky-top navbar-expand-md bg-body-tertiary">
+      <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           Footy
         </Link>
-        {currentUser ? loggedInNav() : loggedOutNav()}
-      </nav>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+          {currentUser ? loggedInNav() : loggedOutNav()}
+
+        </div>
+      </div>
+    </nav>
   );
 }
 

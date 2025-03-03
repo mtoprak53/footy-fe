@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 // import Heading from "./Heading";
 import TeamForm from "./TeamForm";
@@ -32,6 +32,13 @@ const Teams = () => {
 
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  console.debug(
+    "Teams", 
+    "navigate: ", navigate, 
+    "location: ", location
+  )
 
   // team_name = team_name || defaultTeam;
   // teamId = teamId || defaultTeamId;
@@ -199,8 +206,8 @@ const Teams = () => {
   
           /** SAVE THE TEAM INTO THE DB IF IT IS NOT SAVED YET */
           const teamCheck = await FootyApi.getTeam(t.team.id);
-          console.log("teamCheck:");
-          console.log(teamCheck);
+          console.debug("teamCheck:");
+          console.debug(teamCheck);
           if (!teamCheck) await FootyApi.saveTeam(teamInfo);
           console.log(t);
           setData(t);
@@ -228,7 +235,7 @@ const Teams = () => {
     axiosData();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [navigate.location.pathname]);
+  }, [location.pathname]);
 
 
   /**   HANDLE CHANGE   */
@@ -277,7 +284,7 @@ const Teams = () => {
         teamId: value
       }));
 
-      navigate.push(`/teams/${value}`);
+      navigate(`/teams/${value}`);
     }
 
     console.log({ name, value });

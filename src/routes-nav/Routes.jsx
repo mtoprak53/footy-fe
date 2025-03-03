@@ -38,7 +38,7 @@ function MyRoutes({ login, signup }) {
   );
   // element={} /
   return (
-    <div className="pt-5">
+    <div className="Routes justify-content-center">
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route exact path="/login" element={<LoginForm login={login} />} />

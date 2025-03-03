@@ -250,12 +250,16 @@ function App() {
                 favorite, 
                 unfavorite
             }}>
-          <div className="App">
-            <Navigation logout={logout} />
-            <Routes
-              login={login} 
-              signup={signup} 
-            />
+          <div className="App flex">
+            {/* <div className="nav"> */}
+              <Navigation logout={logout} />
+            {/* </div> */}
+            {/* <div className="routes"> */}
+              <Routes
+                login={login} 
+                signup={signup} 
+              />
+            {/* </div> */}
           </div>
         </UserContext.Provider>
       </BrowserRouter>

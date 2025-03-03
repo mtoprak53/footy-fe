@@ -36,7 +36,8 @@ const Competition = ({ type }) => {
   const navigate = useNavigate();
 
   const location = useLocation();
-  console.log(location);
+  console.debug("location: ");
+  console.debug(location);
 
   // Async Handlers
   // const [formLoaded, setFormLoaded] = useState(false);
@@ -66,10 +67,15 @@ const Competition = ({ type }) => {
     country: id ? null : defaultCountry, 
   });
 
-  console.log("Competition");
-  console.log(leagueInfo);
-  console.log( id, season, type );
-  console.log(location.pathname);
+  console.debug(
+    "Competition", 
+    "leagueInfo: ", leagueInfo, 
+    "id: ", id, "season: ", season, "type: ", type, 
+    "location.pathname: ", location.pathname, 
+  );
+  // console.debug(leagueInfo);
+  // console.debug( id, season, type );
+  // console.debug(location.pathname);
   // console.log("leagues.length, cups.length");
   // console.log(leagues.length, cups.length);
 
@@ -338,7 +344,7 @@ const Competition = ({ type }) => {
       newId = newId || id;
       newSeason = newSeason || defaultSeason;
       name === "season" ? newType = type : newType = name  
-      navigate.push(`/${newType}/${newId}/${newSeason}`);
+      navigate(`/${newType}/${newId}/${newSeason}`);
     }
 
     console.log({ name, value });
@@ -363,21 +369,21 @@ const Competition = ({ type }) => {
   //                        compData={JSON.stringify(leagueData)} />
   // }
 
-  console.log("Spinner Stuff");
-  console.log("status");
-  console.log(status);
-  console.log("type");
-  console.log(type);
-  console.log("leagueData");
-  console.log(leagueData);
-  console.log("leagueInfo");
-  console.log(leagueInfo);
-  console.log("cupData");
-  console.log(cupData);
-  console.log("leagues");
-  console.log(leagues);
-  console.log("cups");
-  console.log(cups);
+  console.debug("Spinner Stuff");
+  console.debug("status");
+  console.debug(status);
+  console.debug("type");
+  console.debug(type);
+  console.debug("leagueData");
+  console.debug(leagueData);
+  console.debug("leagueInfo");
+  console.debug(leagueInfo);
+  console.debug("cupData");
+  console.debug(cupData);
+  console.debug("leagues");
+  console.debug(leagues);
+  console.debug("cups");
+  console.debug(cups);
   // console.log(type, leagueData, leagueInfo, cupData, leagues, cups);
 
   if (
@@ -411,7 +417,7 @@ const Competition = ({ type }) => {
 
 
   return (
-      <div className="Competition">
+      <div className="Competition justify-content-center">
 
         {/* COMPETITION FORM COMPONENT */}
         <CompetitionForm 
